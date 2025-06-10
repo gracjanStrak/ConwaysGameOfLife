@@ -8,9 +8,9 @@ namespace ConwaysGameOfLife
     {
         private readonly MainViewModel _viewModel;
 
-        private double zoomFactor = 1.5;
+        private double zoomFactor = 1;
         private const double ZoomStep = 1.5;
-        private const double ZoomMin = 1.5;
+        private const double ZoomMin = 1;
         private const double ZoomMax = 100.0;
 
         private double simulationSpeed = 200;
@@ -112,10 +112,15 @@ namespace ConwaysGameOfLife
                 double absoluteY = (cursorPosition.Y - GameTranslateTransform.Y) / zoomFactor;
 
                 if (e.Delta > 0)
-                    zoomFactor += ZoomStep;
+                {
+                    if (zoomFactor < 50) { zoomFactor += ZoomStep / 2; }
+                    else { zoomFactor += ZoomStep; }
+                }
                 else
-                    zoomFactor -= ZoomStep;
-
+                {
+                    if (zoomFactor < 50) { zoomFactor -= ZoomStep / 2; }
+                    else { zoomFactor -= ZoomStep; }
+                }
                 zoomFactor = Math.Clamp(zoomFactor, ZoomMin, ZoomMax);
 
                 GameScaleTransform.ScaleX = zoomFactor;

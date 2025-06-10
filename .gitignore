@@ -58,3 +58,4 @@ nunit-*.xml
 /.vs/ConwaysGameOfLife/FileContentIndex
 /.vs/ConwaysGameOfLife/DesignTimeBuild
 /.vs/ProjectEvaluation
+/ConwaysGameOfLife/publish

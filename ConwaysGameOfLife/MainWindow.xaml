@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ConwaysGameOfLife"
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d"
-      Title="Game of Life" Height="800" Width="1600"
+      Title="Game of Life" Height="1000" Width="1600"
       KeyDown="Window_KeyDown"
       Focusable="True">
 
@@ -17,8 +17,8 @@
     <Grid Background="#FF282828">
         <Image x:Name="GameImage"
              Source="{Binding Bitmap}"
-             Width="500"
-             Height="500"
+             Width="1000"
+             Height="1000"
              HorizontalAlignment="Center"
              VerticalAlignment="Center"
              MouseDown="Image_MouseDown"
