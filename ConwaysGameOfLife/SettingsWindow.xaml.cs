@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ConwaysGameOfLife;
 
@@ -25,9 +12,9 @@ public partial class SettingsWindow : Window
         DataContext = _viewModel;
     }
 
-    private void OnClick_Reset(object sender, RoutedEventArgs e)
+    private void OnClick_Random(object sender, RoutedEventArgs e)
     {
-        _viewModel.Reset();
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.RANDOM);
     }
 
     private void OnClick_StartStop(object sender, RoutedEventArgs e)
@@ -39,5 +26,58 @@ public partial class SettingsWindow : Window
     {
         _viewModel.GameOfLife.Clear();
     }
+
+    private void OnClick_Calculator(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.CALCULATOR);
+    }
+
+    private void OnClick_Turing(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.TURING);
+    }
+
+    private void OnClick_Omaton(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.OMATON);
+    }
+
+    private void OnClick_Corder(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.CORDER);
+    }
+
+    private void OnClick_Gun(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.GUNS);
+    }
+
+    private void OnClick_Spiral(object sender, RoutedEventArgs e)
+    {
+        _viewModel.GameOfLife.SetPattern(Models.enums.STARTING_LAYOUT.SPIRAL);
+    }
+
+    private void OnClick_ImportRle(object sender, RoutedEventArgs e)
+    {
+        string rle = RleInput.Text;
+
+        if (!int.TryParse(XOffsetInput.Text, out int xOffset))
+            xOffset = 0;
+
+        if (!int.TryParse(YOffsetInput.Text, out int yOffset))
+            yOffset = 0;
+
+        if (string.IsNullOrWhiteSpace(rle))
+        {
+            MessageBox.Show("RLE input is empty.", "Import Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
+        // Zakładam, że masz jakąś metodę do wstawiania RLE
+        // np. GameOfLife.ImportRle(rle, xOffset, yOffset);
+
+        _viewModel.GameOfLife.SetCustomPattern(xOffset,yOffset,rle);
+    }
+
 
 }

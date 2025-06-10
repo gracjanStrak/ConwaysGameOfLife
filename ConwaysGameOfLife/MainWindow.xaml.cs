@@ -8,9 +8,9 @@ namespace ConwaysGameOfLife
     {
         private readonly MainViewModel _viewModel;
 
-        private double zoomFactor = 1.0;
-        private const double ZoomStep = 0.3;
-        private const double ZoomMin = 0.2;
+        private double zoomFactor = 1.5;
+        private const double ZoomStep = 1.5;
+        private const double ZoomMin = 1.5;
         private const double ZoomMax = 100.0;
 
         private double simulationSpeed = 200;
@@ -62,11 +62,23 @@ namespace ConwaysGameOfLife
 
             if (Mouse.MiddleButton == MouseButtonState.Pressed)
             {
-                if (isPanning) { isPanning = false; } else { isPanning = true; }
+                isPanning = true;
                 pos = e.GetPosition(this);
                 lastMousePosition = pos;
             }
+
+           
         }
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if(Mouse.MiddleButton == MouseButtonState.Released)
+            {
+                isPanning = false;
+            }
+            
+        }
+
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -131,7 +143,6 @@ namespace ConwaysGameOfLife
 
            
         }
-
 
         private void GameImage_MouseMove(object sender, MouseEventArgs e)
         {

@@ -8,9 +8,10 @@ namespace ConwaysGameOfLife.Models.enums;
 public enum STARTING_LAYOUT
 {
     RANDOM,
-    GLIDER_LINES,
-    BLINKER_GRID,
-    BLOCK_GRID,
-    GLIDER_REACTOR,
-    MANY_GLIDERS
+    OMATON,
+    TURING,
+    CORDER,
+    CALCULATOR,
+    GUNS,
+    SPIRAL
 }
