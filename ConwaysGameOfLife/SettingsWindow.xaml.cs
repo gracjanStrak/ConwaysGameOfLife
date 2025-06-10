@@ -32,12 +32,12 @@ public partial class SettingsWindow : Window
 
     private void OnClick_StartStop(object sender, RoutedEventArgs e)
     {
-        _viewModel.IsRunning = _viewModel.IsRunning ? false : true;
+        _viewModel.GameOfLife.IsRunning = _viewModel.GameOfLife.IsRunning ? false : true;
     }
 
     private void OnClick_Clear(object sender, RoutedEventArgs e)
     {
-        _viewModel.Clear();
+        _viewModel.GameOfLife.Clear();
     }
 
 }

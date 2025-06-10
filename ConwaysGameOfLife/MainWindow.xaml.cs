@@ -37,8 +37,8 @@ namespace ConwaysGameOfLife
                 double actualWidth = image.ActualWidth;
                 double actualHeight = image.ActualHeight;
 
-                double pixelWidth = _viewModel.Bitmap.PixelWidth;
-                double pixelHeight = _viewModel.Bitmap.PixelHeight;
+                double pixelWidth = _viewModel.GameOfLife.Bitmap.PixelWidth;
+                double pixelHeight = _viewModel.GameOfLife.Bitmap.PixelHeight;
 
                 int x = (int)(pos.X * pixelWidth / actualWidth);
                 int y = (int)(pos.Y * pixelHeight / actualHeight);
@@ -51,8 +51,8 @@ namespace ConwaysGameOfLife
                 double actualWidth = image.ActualWidth;
                 double actualHeight = image.ActualHeight;
 
-                double pixelWidth = _viewModel.Bitmap.PixelWidth;
-                double pixelHeight = _viewModel.Bitmap.PixelHeight;
+                double pixelWidth = _viewModel.GameOfLife.Bitmap.PixelWidth;
+                double pixelHeight = _viewModel.GameOfLife.Bitmap.PixelHeight;
 
                 int x = (int)(pos.X * pixelWidth / actualWidth);
                 int y = (int)(pos.Y * pixelHeight / actualHeight);
@@ -74,13 +74,13 @@ namespace ConwaysGameOfLife
             {
                 if (DataContext is MainViewModel vm)
                 {
-                    vm.IsRunning = !vm.IsRunning;
+                    vm.GameOfLife.IsRunning = !vm.GameOfLife.IsRunning;
                 }
             }
 
             if(e.Key == Key.R)
             {
-                _viewModel.Reset();
+                _viewModel.GameOfLife.Reset();
             }
 
             if (e.Key == Key.F1)
