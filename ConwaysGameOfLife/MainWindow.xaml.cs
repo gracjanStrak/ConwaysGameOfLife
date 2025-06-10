@@ -113,12 +113,12 @@ namespace ConwaysGameOfLife
 
                 if (e.Delta > 0)
                 {
-                    if (zoomFactor < 50) { zoomFactor += ZoomStep / 2; }
+                    if (zoomFactor < 5.0) { zoomFactor += ZoomStep / 4; }
                     else { zoomFactor += ZoomStep; }
                 }
                 else
                 {
-                    if (zoomFactor < 50) { zoomFactor -= ZoomStep / 2; }
+                    if (zoomFactor < 5.0) { zoomFactor -= ZoomStep / 4; }
                     else { zoomFactor -= ZoomStep; }
                 }
                 zoomFactor = Math.Clamp(zoomFactor, ZoomMin, ZoomMax);
@@ -145,8 +145,6 @@ namespace ConwaysGameOfLife
 
                 _viewModel.SimulationSpeed(simulationSpeed);
             }
-
-           
         }
 
         private void GameImage_MouseMove(object sender, MouseEventArgs e)
