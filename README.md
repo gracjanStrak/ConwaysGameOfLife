@@ -65,8 +65,8 @@ You can get more patterns from [ConwayLife Patterns Library](https://conwaylife.
 *Main simulation window with active cells.*
 
 <p float="left">
-  <img src="screenshots/settings-window.png" width="293" />
-  <img src="screenshots/running2.gif" width="710" />
+ <img src="screenshots/settings-window.png" width="25%">
+  <img src="screenshots/running2.gif" width="65%">
 </p>
 
 *Settings window with pattern import module. And build in Calculator model*
