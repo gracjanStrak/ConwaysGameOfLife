@@ -1,17 +1,9 @@
 ﻿using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 using ConwaysGameOfLife.Models;
-using ConwaysGameOfLife.Utils;
-using ConwaysGameOfLife.ViewModels;
 
-namespace ConwaysGameOfLife;
+namespace ConwaysGameOfLife.ViewModels;
 
 public class MainViewModel : INotifyPropertyChanged
 {

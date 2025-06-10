@@ -1,6 +1,7 @@
 ﻿using System.Windows;
+using ConwaysGameOfLife.ViewModels;
 
-namespace ConwaysGameOfLife;
+namespace ConwaysGameOfLife.Views;
 
 public partial class SettingsWindow : Window
 {
