@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+.vs/ConwaysGameOfLife/CopilotIndices/17.13.441.19478/SemanticSymbols.db
+/.vs/ConwaysGameOfLife/CopilotIndices
+/.vs/ConwaysGameOfLife/v17
+/.vs/ConwaysGameOfLife/FileContentIndex
+/.vs/ConwaysGameOfLife/DesignTimeBuild
+/.vs/ProjectEvaluation

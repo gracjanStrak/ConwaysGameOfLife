@@ -17,8 +17,8 @@
     <Grid Background="#FF282828">
         <Image x:Name="GameImage"
              Source="{Binding Bitmap}"
-             Width="800"
-             Height="400"
+             Width="500"
+             Height="500"
              HorizontalAlignment="Center"
              VerticalAlignment="Center"
              MouseDown="Image_MouseDown"

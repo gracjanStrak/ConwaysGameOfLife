@@ -9,9 +9,9 @@ namespace ConwaysGameOfLife
         private readonly MainViewModel _viewModel;
 
         private double zoomFactor = 1.0;
-        private const double ZoomStep = 0.2;
+        private const double ZoomStep = 0.3;
         private const double ZoomMin = 0.2;
-        private const double ZoomMax = 20.0;
+        private const double ZoomMax = 100.0;
 
         private double simulationSpeed = 200;
         private double simulationSpeedStep = 25;
@@ -82,6 +82,11 @@ namespace ConwaysGameOfLife
             {
                 _viewModel.Reset();
             }
+
+            if (e.Key == Key.F1)
+            {
+                SettingsButton_Click(sender, e);
+            }
         }
 
         private void GameImage_MouseWheel(object sender, MouseWheelEventArgs e)
@@ -104,7 +109,6 @@ namespace ConwaysGameOfLife
                 GameScaleTransform.ScaleX = zoomFactor;
                 GameScaleTransform.ScaleY = zoomFactor;
 
-
                 // zooming on cursorPosition
                 GameTranslateTransform.X = cursorPosition.X - absoluteX * zoomFactor;
                 GameTranslateTransform.Y = cursorPosition.Y - absoluteY * zoomFactor;
@@ -124,6 +128,8 @@ namespace ConwaysGameOfLife
 
                 _viewModel.SimulationSpeed(simulationSpeed);
             }
+
+           
         }
 
 
@@ -140,6 +146,13 @@ namespace ConwaysGameOfLife
 
                 lastMousePosition = pos;
             }
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsWindow = new SettingsWindow(DataContext as MainViewModel);
+           
+            settingsWindow.Show();
         }
     }
 }
